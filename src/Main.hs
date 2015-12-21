@@ -1,42 +1,37 @@
-{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Data.Monoid ((<>))
 import Web.Scotty
 import Data.Aeson (FromJSON, ToJSON)
 import GHC.Generics
+import Prelude hiding (id)
 
-data User = User { userId :: Int, userName :: String } deriving (Show, Generic)
-instance ToJSON User
-instance FromJSON User
+data TodoItem = TodoItem { id :: Int, description :: String, done :: Bool } deriving (Show, Generic)
+instance ToJSON TodoItem
+instance FromJSON TodoItem
 
-bob :: User
-bob = User { userId = 1, userName = "bob" }
+first :: TodoItem
+first = TodoItem { id = 1, description = "Do this first", done = True }
 
-jenny :: User
-jenny = User { userId = 2, userName = "jenny" }
+second :: TodoItem
+second = TodoItem { id = 2, description = "Do this second", done = False }
 
-allUsers :: [User]
-allUsers = [bob, jenny]
+allItems :: [TodoItem]
+allItems = [first, second]
 
-matchesId :: Int -> User -> Bool
-matchesId id user = userId user == id
-
+matchesId :: Int -> TodoItem -> Bool
+matchesId itemId item = id item == itemId
 
 
 routes :: ScottyM ()
 routes = do
-  get "/users" $ do
-    json allUsers
+  get "/items" $ do
+    json allItems
 
-  get "/hello/:name" $ do
-      name <- param "name"
-      text ("hello " <> name <> "!")
-
-  get "/users/:id" $ do
+  get "/items/:id" $ do
     id <- param "id"
-    json (filter (matchesId id) allUsers)
+    json (filter (matchesId id) allItems)
 
 
 main = do
