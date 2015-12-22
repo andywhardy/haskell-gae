@@ -36,4 +36,4 @@ routes = do
 
 main = do
     putStrLn "Starting Server..."
-    scotty 3000 $ routes
+    scotty 8080 $ routes
