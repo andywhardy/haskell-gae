@@ -1,5 +1,10 @@
 # haskell-gae
 
+## Setup
+```
+stack setup
+```
+
 ## Build
 ```
 stack build
