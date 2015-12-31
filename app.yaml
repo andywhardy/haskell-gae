@@ -1,0 +1,5 @@
+module: haskell-gae-rest
+runtime: custom
+vm: true
+  
+entrypoint: stack exec haskell-gae 
