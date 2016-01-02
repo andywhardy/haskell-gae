@@ -4,7 +4,7 @@ haskell-gae is an example project to demonstrate the use of Haskell to create a 
 
 ## Prerequisites
 
-To run locally you must have Haskell and Stack installed on your operating system.  To upload to GCP you need to have editor writes to a GCP project and have the gcloud tool installed and available on your OS path.
+To run locally you must have Haskell and Stack installed on your operating system.  To upload to GCP you need to have editor rights to a GCP project and have the gcloud tool installed and available on your OS path.
 
 For further information on installing Haskell or Stack for your OS please see:
 
