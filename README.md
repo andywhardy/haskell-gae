@@ -2,11 +2,11 @@
 
 haskell-gae is an example project to demonstrate the use of Haskell to create a REST API hosted on Google Cloud Platform as a Google App Engine component.
 
-## Prequisites
+## Prerequisites
 
 To run locally you must have Haskell and Stack installed on your operating system.  To upload to GCP you need to have editor writes to a GCP project and have the gcloud tool installed and available on your OS path.
 
-For further information on intalling Haskell or Stack for your OS please see:
+For further information on installing Haskell or Stack for your OS please see:
 
 https://www.haskell.org/platform/
 http://docs.haskellstack.org/en/stable/README.html
